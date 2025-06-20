@@ -1,0 +1,13 @@
+{
+  "name": "reefz-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Monorepo for reefz-site with React frontend and Elysia.js backend",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter backend dev"
+  }
+}

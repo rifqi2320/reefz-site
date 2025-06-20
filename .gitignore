@@ -1,0 +1,34 @@
+# Node
+node_modules/
+dist/
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Build
+build/
+
+# Misc
+*.local
+*.cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+*.vite
