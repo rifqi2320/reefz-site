@@ -1,6 +1,15 @@
 import { PortfolioData } from './types';
 import { generateTagsFromData } from './utils/tagGenerator';
 
+const staticAsset = (path: string): string => {
+  const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL.slice(0, -1)
+    : import.meta.env.BASE_URL;
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+  return encodeURI(`${baseUrl}${normalizedPath}`);
+};
+
 // Portfolio data without manual tags
 // const rawPortfolioData = {
 //   personalInfo: {
@@ -382,25 +391,25 @@ const rawPortfolioData = {
       twitter: "https://x.com/rifqinau",
       website: "me.reefz.cc",
       scholar: "https://scholar.google.com/citations?user=gXXxvVYAAAAJ&hl=en",
-      cv: "/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf"
+      cv: staticAsset("/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf")
     },
-    avatar: "/fotoiqi.jpg",
+    avatar: staticAsset("/fotoiqi.jpg"),
     gallery: [
       {
         id: "gallery1",
-        url: "/tegal-iqi.jpg",
+        url: staticAsset("/tegal-iqi.jpg"),
         caption: "Warehouse Deployment at Tegal",
         alt: "Rifqi and team at Tegal warehouse"
       },
       {
         id: "gallery2",
-        url: "/symposium-jaist-iqi.jpg",
+        url: staticAsset("/symposium-jaist-iqi.jpg"),
         caption: "Presenting at Sakura Science Symposium, Ishikawa, Japan",
         alt: "Rifqi presenting at Symposium"
       },
       {
         id: "gallery3",
-        url: "/dcamiqi.jpg",
+        url: staticAsset("/dcamiqi.jpg"),
         caption: "Mining site survey (D'cam Project)",
         alt: "Rifqi at mining site with D'cam project survey"
       }
@@ -661,13 +670,13 @@ const rawPortfolioData = {
       title: "AI Platform Engineer",
       bio: "I am a Platform Engineer obsessed with the 'System' side of AI. Currently at Shopee, I optimize the infrastructure that powers global-scale AI services. Previously at CharCentric, I built greenfield Agentic Platforms from scratch. I combine Rust-based security, high-performance SQL/Vector search, and modern frontend architecture to ship AI products that are not just smart, but reliable and fast.",
       relevantTags: ["System Design", "Infrastructure", "Agentic AI"],
-      cv: "/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf"
+      cv: staticAsset("/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf")
     },
     research: {
       title: "Agentic AI Researcher",
       bio: "I aspire to build the next generation of Reliable Autonomous Agents. My research investigates how to make LLMs better at planning and reasoning (Chain-of-Thought), and how to ground them in reality using tools and external knowledge (RAG). My background in shipping production AI systems gives me a unique perspective on the fragility of current agents and the engineering rigor required to fix them.",
       relevantTags: ["Agents", "Reasoning", "Robustness"],
-      cv: "/CV_Rifqi (AI_ML_Research) 13_02_2026.pdf"
+      cv: staticAsset("/CV_Rifqi (AI_ML_Research) 13_02_2026.pdf")
     }
   }
 };
