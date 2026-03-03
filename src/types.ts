@@ -10,6 +10,7 @@ export interface PersonalInfo {
     twitter?: string;
     website?: string;
     scholar?: string;
+    cv?: string;
   };
   avatar?: string;
   gallery?: {
@@ -26,7 +27,7 @@ export interface Award {
   organization: string;
   year: string;
   description?: string;
-  type: 'award' | 'honor' | 'fellowship' | 'grant' | 'recognition';
+  type: 'award' | 'honor' | 'fellowship' | 'grant' | 'recognition' | 'competition';
 }
 
 export interface Education {
@@ -96,7 +97,7 @@ export interface Publication {
     demo?: string;
   };
   citations?: number;
-  status?: 'published' | 'accepted' | 'under-review' | 'preprint' | 'in-preparation' | 'upcoming';
+  status?: 'published' | 'accepted' | 'submitted' | 'under-review' | 'preprint' | 'in-preparation' | 'upcoming';
   featured?: boolean;
   // New fields for partial information
   isPartial?: boolean; // Flag to indicate partial information
@@ -108,6 +109,7 @@ export interface PortfolioModeConfig {
   title: string;
   bio: string;
   relevantTags: string[];
+  cv?: string;
 }
 
 export type PortfolioMode = 'fullstack' | 'research';

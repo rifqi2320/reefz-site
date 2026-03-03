@@ -371,19 +371,20 @@ import { generateTagsFromData } from './utils/tagGenerator';
 
 const rawPortfolioData = {
   personalInfo: {
-    name: "Rifqi Naufal Abdjul", // full legal name :contentReference[oaicite:19]{index=19}
-    title: "Full-Stack AI Engineer", // job title on CV :contentReference[oaicite:20]{index=20}
-    bio: "AI engineer and researcher building scalable, human-centric products that merge modern ML techniques with robust backend engineering.",
-    location: "Jakarta, Indonesia", // inferred from header & projects – adjust if needed
-    email: "rifqi.abdjul23@gmail.com", // :contentReference[oaicite:21]{index=21}
+    name: "Rifqi Naufal Abdjul",
+    title: "AI Platform Engineer & Researcher",
+    bio: "Specializing in Agentic AI and Scalable Systems. I bridge the gap between complex reasoning models and high-performance production infrastructure.",
+    location: "Jakarta, Indonesia",
+    email: "rifqi.abdjul23@gmail.com",
     social: {
-      github: "https://github.com/rifqi2320", // :contentReference[oaicite:22]{index=22}
-      linkedin: "https://www.linkedin.com/in/rifqina", // :contentReference[oaicite:23]{index=23}
-      twitter: "https://x.com/rifqinau", // TODO: add Twitter handle if any
-      website: "me.reefz.cc", // TODO: add personal website
-      scholar: "https://scholar.google.com/citations?user=gXXxvVYAAAAJ&hl=en" // TODO: add Google Scholar profile
+      github: "https://github.com/rifqi2320",
+      linkedin: "https://www.linkedin.com/in/rifqina",
+      twitter: "https://x.com/rifqinau",
+      website: "me.reefz.cc",
+      scholar: "https://scholar.google.com/citations?user=gXXxvVYAAAAJ&hl=en",
+      cv: "/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf"
     },
-    avatar: "/fotoiqi.jpg", // TODO: replace with real image
+    avatar: "/fotoiqi.jpg",
     gallery: [
       {
         id: "gallery1",
@@ -392,7 +393,7 @@ const rawPortfolioData = {
         alt: "Rifqi and team at Tegal warehouse"
       },
       {
-        id: "gallery2", 
+        id: "gallery2",
         url: "/symposium-jaist-iqi.jpg",
         caption: "Presenting at Sakura Science Symposium, Ishikawa, Japan",
         alt: "Rifqi presenting at Symposium"
@@ -408,177 +409,184 @@ const rawPortfolioData = {
 
   experiences: [
     {
+      id: "exp_shopee",
+      title: "AI Platform Engineer",
+      company: "Shopee",
+      location: "Jakarta, Indonesia (Hybrid)",
+      startDate: "2024-12",
+      endDate: "Present",
+      summary: "Optimizing global AI infrastructure and internal tooling for Shopee International",
+      description: "Responsible for the stability and performance of the AI platform serving internal users across Shopee International. Focused on high-availability infrastructure, query optimization, and rapid feature delivery.",
+      tags: ["Full-Time", "Infrastructure", "System Design", "DevOps"],
+      modes: ["fullstack"],
+      achievements: [
+        "Migrated ALBs to on-premise private cloud, resolving bandwidth contention and stabilizing cluster uptime",
+        "Optimized complex SQL/Elasticsearch queries, reducing data retrieval latency by 40%",
+        "Maintained weekly feature release cadence for high-velocity internal data science teams"
+      ]
+    },
+    {
       id: "exp_charcentric",
       title: "Full-Stack Engineer (AI)",
       company: "CharCentric",
-      location: "Remote / Jakarta", // TODO: confirm exact
+      location: "Remote",
       startDate: "2024-02",
-      summary: "Designing AI products and ML infrastructure for enterprise clients",
-      description:
-        "A fullstack role focused on building AI products and with constant collaboration with clients. I wore multiple hats, from AI engineering, backend development, to frontend work. Managing client expectations and delivering high-quality solutions was key.",
-      tags: ["Full-Time", "AI", "Backend", "Frontend", "Data Engineering"],
+      endDate: "2025-11",
+      summary: "Core engineer for a greenfield Agentic Workflow platform",
+      description: "Co-architected a scalable data workflow platform that generalizes client business processes. Transitioned from pure engineering to applied research, focusing on reliability in autonomous agents.",
+      tags: ["Full-Time", "Agentic AI", "Rust", "GraphRAG", "Next.js"],
       modes: ["fullstack", "research"],
       achievements: [
-        "Built multiple data pipelines and develop dashboards to serve client needs",
-        "Rewrote legacy Create-React-App frontend to Next.js 14, improving performance and maintainability",
-        "Led 2-person team shipping an in-house RAG chatbot", // :contentReference[oaicite:24]{index=24}
-        "Implemented ABAC service that reduced auth latency by 40 %", // derived from CV bullet
+        "Co-built a greenfield platform automating the pipeline from raw ingestion to Agentic Workflow chatbots",
+        "Architected a custom GraphRAG PoC to validate multi-hop reasoning capabilities for complex client queries",
+        "Designed a memory-safe Attribute-Based Access Control (ABAC) system in Rust, reducing auth latency by 40%",
+        "Refactored legacy dashboards to Next.js, eliminating performance bottlenecks and enhancing UX"
       ]
     },
     {
       id: "exp_jaist",
       title: "Student Research Intern",
-      company: "Japan Advanced Institute of Science and Technology (JAIST)",
+      company: "JAIST",
       location: "Ishikawa, Japan & Remote",
       startDate: "2024-01",
       endDate: "2024-02",
-      summary: "Speech-privacy research under the Sakura Science Program",
-      description:
-        "Collaborated with JAIST researchers on speech privacy. Was part of the Sakura Science Program, which promotes international collaboration in science and technology. Focused on developing de-identification systems for low-resource languages.",
-      tags: ["Intern", "Research"],
+      summary: "Privacy-preserving speech research under Sakura Science Program",
+      description: "Collaborated with the content-based speech privacy group on de-identification systems for low-resource languages.",
+      tags: ["Intern", "Research", "Speech Processing"],
       modes: ["research"],
       achievements: [
-        "Published paper at SEALP 2025 (COLING workshop)" // :contentReference[oaicite:25]{index=25}
+        "Published paper at SEALP 2025 (COLING workshop) on weakly-supervised de-identification"
       ]
     },
     {
       id: "exp_paragon",
       title: "Backend Engineer Intern",
-      company: "PT Paragon Technology & Innovation",
+      company: "Paragon Technology & Innovation",
       location: "Jakarta, Indonesia",
       startDate: "2022-06",
       endDate: "2023-12",
-      summary: "Built and maintained internal services for Beyondly & WMS",
-      description:
-      // intern, high contribution, contribute to a marketplace, and handling deployments on real warehouse systems
-        "An intern position where I contributed to backend services for Beyondly, a B2B marketplace, and WMS, a warehouse management system. I was involved in building and maintaining internal services, handling deployments on-site, and ensuring system reliability.",
-      tags: ["Backend", "Intern"],
+      summary: "Backend services for B2B Marketplace and Warehouse Management",
+      description: "Built reliable backend services for critical logistics operations. Handled on-site deployments and ensured system reliability for warehouse management systems.",
+      tags: ["Intern", "Backend", "Logistics"],
       modes: ["fullstack"],
       achievements: [
-        "Delivered WMS backend adopted by >5 warehouses", // CV bullets :contentReference[oaicite:26]{index=26}
-        "Cut deployment bugs by enforcing typed docs and API specs"
+        "Delivered WMS backend services adopted by >5 major warehouses",
+        "Reduced deployment errors by enforcing strict API specifications and typed documentation"
       ]
     }
   ],
 
   projects: [
-  {
-    "id": "proj_dcam_incam",
-    "title": "D’Cam - InCam",  // :contentReference[oaicite:20]{index=20}
-    "summary": "Computer‑vision model for microsleep, fatigue, and rule‑violation detection",
-    "description": "Built a microsleep/fatigue detector using MediaPipe Face Landmark and YOLOv8; deployed on Jetson Nano to stream real‑time alerts to a central service.",  // :contentReference[oaicite:21]{index=21}
-    "tags": ["Computer Vision", "Edge Devices"],
-    "modes": ["research"],
-    "startDate": "2023-12",  // Dec 2023 :contentReference[oaicite:22]{index=22}
-    "media": [],
-    "links": {},
-    "featured": true
-  },
-  {
-    "id": "proj_cinlok",
-    "title": "CinLok",  // :contentReference[oaicite:23]{index=23}
-    "summary": "Progressive Web App dating platform for students",
-    "description": "Full‑stack PWA with React (TypeScript) frontend, Express (TypeScript) backend, Firebase Chat, and Weaviate vector DB for profile mixing.",  // :contentReference[oaicite:24]{index=24}
-    "tags": ["Web Development", "PoC"],
-    "modes": ["fullstack"],
-    "startDate": "2023-02",  // Feb 2023 :contentReference[oaicite:25]{index=25}
-    "media": [],
-    "links": {},
-    "featured": true
-  },
-  {
-    "id": "proj_binotify",
-    "title": "Binotify",  // :contentReference[oaicite:26]{index=26}
-    "summary": "Microservice‑based music recommendation app",
-    "description": "Developed a two‑phase microservices architecture (Java JAX‑WS, React TS, Express TS, Apache‑PHP) to enable SOAP/REST communications for secure music streaming and local playback.",  // :contentReference[oaicite:27]{index=27}
-    "tags": ["Web Development", "Microservices"],
-    "modes": ["fullstack"],
-    "startDate": "2022-07",  // July 2022 :contentReference[oaicite:28]{index=28}
-    "media": [],
-    "links": {},
-    "featured": false
-  },
-  {
-    "id": "proj_pln_data_sync",
-    "title": "PLN Data Sync",  // :contentReference[oaicite:29]{index=29}
-    "summary": "Real‑time ETL pipeline for SCADA analytics dashboards",
-    "description": "Built a real‑time data ingestion pipeline for SCADA analytics using Prefect orchestration and Polars for high‑performance processing.",  // :contentReference[oaicite:30]{index=30}
-    "tags": ["ETL", "Data Engineering"],
-    "modes": ["fullstack"],
-    "startDate": "2025-03",  // TODO: confirm exact kickoff date
-    "media": [],
-    "links": {},
-    "featured": true
-  },
     {
-      id: "proj_rag_km",
-      title: "RAG Kurikulum Merdeka",
-      summary: "Retrieval-augmented chatbot for Indonesia’s new curriculum",
-      description:
-        "FastAPI + LangChain + pgvector stack that answers policy questions for teachers and administrators. Supports semantic search, multi-LLM backends and containerised deployment.",
-      tags: ["Web Development", "AI", "Chatbot"],
-      modes: ["fullstack"],
-      startDate: "2025-03", // TODO: verify kickoff date
+      id: "proj_copbench",
+      title: "CoPBench (Thesis)",
+      summary: "Benchmark for Chain-of-Thought Reasoning in Physics",
+      description: "Developed a novel benchmark to evaluate Scientific and Multimodal reasoning in Vision Language Models (VLMs). Demonstrated that concept-aware context significantly improves reasoning accuracy compared to standard zero-shot prompting.",
+      tags: ["Research", "LLM", "Reasoning", "Multimodal"],
+      modes: ["research"],
+      startDate: "2024-09",
       media: [],
-      links: {
-        github: "https://github.com/rifqi2320/rag-kurikulum", // TODO: repo link
-      },
+      links: {},
       featured: true
     },
     {
-      id: "proj_vlookup",
-      title: "VLookup Web Application",
-      summary: "Next.js tool that performs Google-Sheets VLOOKUPs via API",
-      description:
-        "Implements dynamic sheet metadata retrieval, key-based search and responsive Chakra UI front-end.",
-      tags: ["Web Development"],
+      id: "proj_pln_data_sync",
+      title: "PLN Data Sync",
+      summary: "Real-time ETL pipeline for SCADA analytics",
+      description: "Built a high-performance data ingestion pipeline for SCADA analytics using Prefect orchestration and Polars. Handles real-time telemetry data processing for energy infrastructure.",
+      tags: ["Data Engineering", "ETL", "Real-time"],
       modes: ["fullstack"],
-      startDate: "2025-02",
+      startDate: "2025-03",
+      media: [],
+      links: {},
+      featured: true
+    },
+    {
+      id: "proj_rag_km",
+      title: "RAG Kurikulum Merdeka",
+      summary: "Agentic chatbot for Indonesia's education policy",
+      description: "FastAPI + LangChain + pgvector stack answering policy questions. Implements semantic search and basic tool-use to retrieve specific regulations.",
+      tags: ["Agentic AI", "RAG", "Chatbot"],
+      modes: ["fullstack", "research"],
+      startDate: "2025-03",
       media: [],
       links: {
-        github: "https://github.com/rifqi2320/vlookup",
+        github: "https://github.com/rifqi2320/rag-kurikulum"
       },
       featured: false
     },
     {
-      id: "proj_nymph",
-      title: "NIM Finder",
-      summary: "Fast fuzzy-search engine for 400 k+ student records",
-      description:
-        "Next.js 14 + FuzzySort + React-Window virtualised list; backed by JSON database and Python data-mining pipeline.",
-      tags: ["Web Development"],
+      id: "proj_dcam",
+      title: "D'Cam - InCam",
+      summary: "Edge-based fatigue detection system",
+      description: "Computer-vision model for microsleep and rule-violation detection using MediaPipe and YOLOv8. Optimized for Jetson Nano edge deployment.",
+      tags: ["Computer Vision", "Edge AI", "IoT"],
+      modes: ["research", "fullstack"],
+      startDate: "2023-12",
+      media: [],
+      links: {},
+      featured: false
+    },
+    {
+      id: "proj_twitch_recsys",
+      title: "Twitch RecSys",
+      summary: "Graph-based recommendation system analysis",
+      description: "Evaluated four recommendation models on 124M interactions. The collaborative filtering model achieved 78.79% accuracy, demonstrating superior performance in user similarity-based recommendations.",
+      tags: ["Research", "RecSys", "Data Mining"],
+      modes: ["research"],
+      startDate: "2023-09",
+      endDate: "2023-12",
+      media: [],
+      links: {},
+      featured: true
+    },
+    {
+      id: "proj_portfolio_site",
+      title: "Personal Portfolio",
+      summary: "Dual-mode portfolio (Research vs Engineering)",
+      description: "Modern portfolio built with React 18 and TypeScript. Features a toggleable context switch between 'Researcher' and 'Engineer' personas.",
+      tags: ["Frontend", "UX Design"],
       modes: ["fullstack"],
-      startDate: "2024-10",
+      startDate: "2025-01",
       media: [],
       links: {
-        demo: "https://nymph-nim-finder.vercel.app/",
-        github: "https://github.com/rifqi2320/nymph-nim-finder"
-      }
+        demo: "https://me.reefz.cc",
+        github: "https://github.com/rifqi2320/reefz-site"
+      },
+      featured: false
     }
   ],
 
   publications: [
     {
+      id: "pub_copbench",
+      title: "Concepts-of-Physics Benchmark (CoPBench) for Chain-of-Thought Reasoning",
+      authors: ["Rifqi Naufal Abdjul"],
+      venue: "Submitted to ARR (July 2025)",
+      year: "2025",
+      type: "conference",
+      abstract: "We introduce CoPBench, a specialized benchmark for evaluating Scientific and Multimodal reasoning in Vision Language Models (VLMs). By enforcing concept-aware context retrieval, we demonstrate significant improvements in Chain-of-Thought reasoning capabilities compared to generic baselines.",
+      tags: ["reasoning", "multimodal", "llm", "physics"],
+      links: {},
+      status: "submitted",
+      featured: true
+    },
+    {
       id: "pub_speech_deid",
       title: "Indonesian Speech Content De-Identification in Low-Resource Transcripts",
       authors: [
-        "Rifqi Naufal Abdjul",
-        "Dessi Puji Lestari",
-        "Ayu Purwarianti",
-        "Candy Olivia Mawalim",
-        "Sakriani Sakti",
-        "Masashi Unoki"
+        "Rifqi Naufal Abdjul", "Dessi Puji Lestari", "Ayu Purwarianti",
+        "Candy Olivia Mawalim", "Sakriani Sakti", "Masashi Unoki"
       ],
-      venue: "2nd Workshop on South-East Asian Language Processing (SEALP 2025) @ COLING",
+      venue: "SEALP 2025 @ COLING",
       year: "2025",
       type: "workshop",
-      abstract: "Advancements in technology and the increased use of digital data threaten individual privacy, especially in speech containing Personally Identifiable Information (PII). Therefore, systems that can remove or process privacy-sensitive data in speech are needed, particularly for low-resource transcripts. These transcripts are minimally annotated or labeled automatically, which is less precise than human annotation. However, using them can simplify the development of de-identification systems in any language. In this study, we develop and evaluate an efficient speech de-identification system. We create an Indonesian speech dataset containing sensitive private information and design a system with three main components: speech recognition, information extraction, and masking. To enhance performance in low-resource settings, we incorporate transcription data in training, use data augmentation, and apply weakly supervised learning. Our results show that our techniques significantly improve privacy detection performance, with approximately 29% increase in F1 score, 20% in precision, and 30% in recall with minimally labeled data.",
-      tags: ["speech", "privacy", "nlp", "deep-learning"],
+      abstract: "Proposed a weakly supervised learning framework for privacy preservation in low-resource languages. Achieved a 29% increase in F1 score by leveraging entity embeddings and data augmentation on minimally labeled speech transcripts.",
+      tags: ["speech", "privacy", "weak-supervision"],
       links: {
         paper: "https://aclanthology.org/2025.sealp-1.6/",
         pdf: "https://aclanthology.org/2025.sealp-1.6.pdf"
       },
-      citations: 0, // TODO: update when indexed
       status: "published",
       featured: true
     }
@@ -587,30 +595,26 @@ const rawPortfolioData = {
   awards: [
     {
       id: "award_gemastik",
-      title: "1st Place – Pra-Gemastik Data Mining",
+      title: "1st Place - Pra-Gemastik Data Mining",
       organization: "Gemastik",
       year: "2023",
-      description:
-        "Wrote a technical paper on forecasting Jakarta air-pollution using open-government data", // :contentReference[oaicite:27]{index=27}
+      description: "Technical paper on forecasting air pollution using open-government data.",
       type: "competition"
     },
-    // IChO 2020 bronze medal
     {
       id: "award_icho",
-      title: "Bronze Medal – International Chemistry Olympiad 2020",
-      organization: "International Chemistry Olympiad",
+      title: "Bronze Medal - International Chemistry Olympiad",
+      organization: "IChO",
       year: "2020",
-      // remote setting due to COVID-19, turkey as a host
-      description: "Achieved bronze medal in International Chemistry Olympiad 2020, held remotely with Turkey as the host country.",
+      description: "International competition held remotely (Host: Turkey).",
       type: "competition"
     },
-    // OSN 2019 bronze medal
     {
       id: "award_osn",
-      title: "Bronze Medal – National Science Olympiad 2019",
-      organization: "Kementerian Pendidikan dan Kebudayaan Republik Indonesia",
+      title: "Bronze Medal - National Science Olympiad",
+      organization: "Ministry of Education Indonesia",
       year: "2019",
-      description: "Awarded bronze medal in the National Science Olympiad (OSN) for excellence in chemistry.",
+      description: "National level chemistry olympiad.",
       type: "competition"
     }
   ],
@@ -618,62 +622,55 @@ const rawPortfolioData = {
   education: [
     {
       id: "edu_msc_itb",
-      degree: "Master of Science",
+      degree: "M.Sc. in Artificial Intelligence",
       field: "Informatics",
       school: "Institut Teknologi Bandung",
       location: "Bandung, Indonesia",
       startDate: "2024-09",
-      endDate: "2025-09 (expected)",
-      gpa: "3.82/4.0", // :contentReference[oaicite:29]{index=29}
+      endDate: "2025-09",
+      gpa: "3.82/4.0",
       honors: ["Ganesha Talent Assistantship 100 Scholarship"],
-      description: "Fast-track program specialising in Intelligent Systems & AI Engineering.",
+      description: "Focusing on Multimodal Reasoning and Agentic Systems.",
       thesis: {
-        title: "Concepts-of-Physics Benchmark for Chain-of-Thought Physics Reasoning", // TODO when finalised
+        title: "Concepts-of-Physics Benchmark (CoPBench)",
         advisor: "Genta Indra Winata, Ayu Purwarianti",
-        description: "CoPBench is a multimodal physics benchmark explicitly designed to evaluate models' conceptual understanding through a fine-grained, chain-of-thought framework."
+        description: "Investigating Chain-of-Thought reasoning enhancements in VLMs via concept retrieval."
       }
     },
     {
       id: "edu_bsc_itb",
-      degree: "Bachelor of Science",
-      field: "Informatics",
+      degree: "B.Sc. in Informatics",
       school: "Institut Teknologi Bandung",
+      field: "Informatics",
       location: "Bandung, Indonesia",
       startDate: "2020-08",
       endDate: "2024-07",
-      gpa: "3.88/4.0", // :contentReference[oaicite:30]{index=30}
-      honors: [
-        "Cum Laude", 
-        "Beasiswa Unggulan Scholarship",
-      ],
-      description: "Specialised courses: Machine Learning, Data Mining, Computer Vision, Natural Language Processing, and Distributed Applications",
+      gpa: "3.88/4.0",
+      honors: ["Cum Laude", "Beasiswa Unggulan Scholarship"],
+      description: "Specialization in Machine Learning and Distributed Systems.",
       thesis: {
-        title: "Indonesian Speech Content De-Identification in Low Resource Transcripts", // TODO when finalised
-        advisor: "Dessi Puji Lestari, Ayu Purwarianti, Candy Olivia Mawalim, Sakriani Sakti, Masashi Unoki",
-        description: "A pipeline for de-identifying sensitive information in Indonesian speech transcripts, leveraging ASR, NER and masking techniques."
+        title: "Indonesian Speech Content De-Identification",
+        advisor: "Dessi Puji Lestari",
+        description: "Developed a privacy pipeline using ASR and NER for low-resource languages."
       }
     }
   ],
 
   modes: {
     fullstack: {
-      title: "Full-Stack AI Developer",
-      bio: "I’m a mid‑junior full‑stack AI engineer based in Jakarta, driven by a passion for building scalable, high‑performance systems that solve real‑world problems. I enjoy tackling end‑to‑end challenges—designing reliable back‑end services, orchestrating data pipelines, and crafting intuitive user experiences. My core interests lie in system observability, performance optimization, and writing clean, maintainable code that thrives under production demands. I’m constantly refining development workflows and automation to boost reliability and efficiency.",
-      relevantTags: [
-
-      ]
+      title: "AI Platform Engineer",
+      bio: "I am a Platform Engineer obsessed with the 'System' side of AI. Currently at Shopee, I optimize the infrastructure that powers global-scale AI services. Previously at CharCentric, I built greenfield Agentic Platforms from scratch. I combine Rust-based security, high-performance SQL/Vector search, and modern frontend architecture to ship AI products that are not just smart, but reliable and fast.",
+      relevantTags: ["System Design", "Infrastructure", "Agentic AI"],
+      cv: "/CV_Rifqi (AI_ML_Eng) 13_02_2026.pdf"
     },
     research: {
-      title: "Early-career AI ML Researcher",
-      bio: "I’m an early‑career ML researcher and AI scientist with a keen interest in leading‑edge machine learning technologies, especially their engineering aspects. I’m passionate about making models more interpretable and building privacy‑aware solutions for sensitive data. Eager to dive into experiments, benchmarks, and tool development, I aim to contribute to transparent, reliable AI systems that users can trust and understand.",
-      relevantTags: [
-
-      ]
+      title: "Agentic AI Researcher",
+      bio: "I aspire to build the next generation of Reliable Autonomous Agents. My research investigates how to make LLMs better at planning and reasoning (Chain-of-Thought), and how to ground them in reality using tools and external knowledge (RAG). My background in shipping production AI systems gives me a unique perspective on the fragility of current agents and the engineering rigor required to fix them.",
+      relevantTags: ["Agents", "Reasoning", "Robustness"],
+      cv: "/CV_Rifqi (AI_ML_Research) 13_02_2026.pdf"
     }
   }
 };
-
-
 // Generate tags automatically and export the complete portfolio data
 export const portfolioData = {
   ...rawPortfolioData,

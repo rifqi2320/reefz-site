@@ -10,7 +10,7 @@ services:
       - "4444:4173"
     environment:
       - NODE_ENV=production
-    restart: unless-stopped
+    restart: always
     # Add resource limits for efficiency
     deploy:
       resources:

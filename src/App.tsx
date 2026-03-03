@@ -6,12 +6,10 @@ import ModeSwitcher from './components/ModeSwitcher';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Gallery from './components/Gallery';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
-import Awards from './components/Awards';
-import Education from './components/Education';
+import EducationAndAwards from './components/EducationAndAwards';
 import Contact from './components/Contact';
 
 function App() {
@@ -112,10 +110,14 @@ function App() {
           </>
         )}
         
-        <Education education={portfolioData.education} />
-        <Awards awards={portfolioData.awards} />
-        <Contact personalInfo={portfolioData.personalInfo} />
-        <Gallery personalInfo={portfolioData.personalInfo} />
+        <EducationAndAwards 
+          education={portfolioData.education} 
+          awards={portfolioData.awards} 
+        />
+        <Contact
+          personalInfo={portfolioData.personalInfo}
+          cvUrl={portfolioData.modes[mode].cv}
+        />
       </motion.main>
     </div>
   );

@@ -88,6 +88,7 @@ const PublicationCard = ({ publication, tags, index, featured = false }: Publica
     switch (status) {
       case 'published': return 'bg-green-100 text-green-800';
       case 'accepted': return 'bg-blue-100 text-blue-800';
+      case 'submitted': return 'bg-amber-100 text-amber-800';
       case 'under-review': return 'bg-yellow-100 text-yellow-800';
       case 'preprint': return 'bg-purple-100 text-purple-800';
       case 'in-preparation': return 'bg-orange-100 text-orange-800';

@@ -3,9 +3,12 @@ import { PersonalInfo } from '../types';
 
 interface ContactProps {
   personalInfo: PersonalInfo;
+  cvUrl?: string;
 }
 
-const Contact = ({ personalInfo }: ContactProps) => {
+const Contact = ({ personalInfo, cvUrl }: ContactProps) => {
+  const resolvedCvUrl = cvUrl ?? personalInfo.social.cv;
+
   return (
     <section id="contact" className="py-20 section-padding">
       <div className="container-width">
@@ -78,6 +81,21 @@ const Contact = ({ personalInfo }: ContactProps) => {
                   <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5 12 0z"/>
                 </svg>
                 Google Scholar
+              </motion.a>
+            )}
+            
+            {resolvedCvUrl && (
+              <motion.a
+                href={resolvedCvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-neutral-600 hover:text-accent transition-colors duration-200"
+                whileHover={{ y: -2 }}
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                </svg>
+                CV / Resume
               </motion.a>
             )}
           </div>
